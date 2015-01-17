@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBD5C831A6B280400E4DC80 /* fish.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4BBD5C821A6B280400E4DC80 /* fish.gif */; };
 		A710D1C71A6B255C00BBB38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710D1C61A6B255C00BBB38B /* AppDelegate.swift */; };
 		A710D1C91A6B255C00BBB38B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A710D1C81A6B255C00BBB38B /* GameScene.sks */; };
 		A710D1CB1A6B255C00BBB38B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710D1CA1A6B255C00BBB38B /* GameScene.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BBD5C821A6B280400E4DC80 /* fish.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = fish.gif; path = Images/fish.gif; sourceTree = "<group>"; };
 		A710D1C11A6B255C00BBB38B /* FishBait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishBait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A710D1C51A6B255C00BBB38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A710D1C61A6B255C00BBB38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		A710D1EC1A6B26A300BBB38B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4BBD5C821A6B280400E4DC80 /* fish.gif */,
 				A710D1ED1A6B26FF00BBB38B /* LadyBug.png */,
 			);
 			name = Images;
@@ -213,6 +216,7 @@
 				A710D1D21A6B255C00BBB38B /* Images.xcassets in Resources */,
 				A710D1C91A6B255C00BBB38B /* GameScene.sks in Resources */,
 				A710D1EE1A6B26FF00BBB38B /* LadyBug.png in Resources */,
+				4BBD5C831A6B280400E4DC80 /* fish.gif in Resources */,
 				A710D1D01A6B255C00BBB38B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
