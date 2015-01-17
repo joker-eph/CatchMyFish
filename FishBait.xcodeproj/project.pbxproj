@@ -15,6 +15,7 @@
 		A710D1D21A6B255C00BBB38B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A710D1D11A6B255C00BBB38B /* Images.xcassets */; };
 		A710D1D51A6B255C00BBB38B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A710D1D31A6B255C00BBB38B /* LaunchScreen.xib */; };
 		A710D1E11A6B255C00BBB38B /* FishBaitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710D1E01A6B255C00BBB38B /* FishBaitTests.swift */; };
+		A710D1EE1A6B26FF00BBB38B /* LadyBug.png in Resources */ = {isa = PBXBuildFile; fileRef = A710D1ED1A6B26FF00BBB38B /* LadyBug.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		A710D1DA1A6B255C00BBB38B /* FishBaitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FishBaitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A710D1DF1A6B255C00BBB38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A710D1E01A6B255C00BBB38B /* FishBaitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishBaitTests.swift; sourceTree = "<group>"; };
+		A710D1ED1A6B26FF00BBB38B /* LadyBug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LadyBug.png; path = Images/LadyBug.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		A710D1B81A6B255C00BBB38B = {
 			isa = PBXGroup;
 			children = (
+				A710D1EC1A6B26A300BBB38B /* Images */,
 				A710D1C31A6B255C00BBB38B /* FishBait */,
 				A710D1DD1A6B255C00BBB38B /* FishBaitTests */,
 				A710D1C21A6B255C00BBB38B /* Products */,
@@ -116,6 +119,14 @@
 				A710D1DF1A6B255C00BBB38B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A710D1EC1A6B26A300BBB38B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A710D1ED1A6B26FF00BBB38B /* LadyBug.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				A710D1D51A6B255C00BBB38B /* LaunchScreen.xib in Resources */,
 				A710D1D21A6B255C00BBB38B /* Images.xcassets in Resources */,
 				A710D1C91A6B255C00BBB38B /* GameScene.sks in Resources */,
+				A710D1EE1A6B26FF00BBB38B /* LadyBug.png in Resources */,
 				A710D1D01A6B255C00BBB38B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +427,7 @@
 				A710D1E61A6B255C00BBB38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A710D1E71A6B255C00BBB38B /* Build configuration list for PBXNativeTarget "FishBaitTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +436,7 @@
 				A710D1E91A6B255C00BBB38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
