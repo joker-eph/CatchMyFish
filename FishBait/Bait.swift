@@ -28,6 +28,7 @@ class Bait : SKSpriteNode {
         self.physicsBody?.categoryBitMask = 1
         self.physicsBody?.contactTestBitMask = 2
         self.physicsBody?.collisionBitMask = 0
+        
 
     }
 
@@ -66,7 +67,7 @@ class Bait : SKSpriteNode {
         var rotation = -M_PI / 2.0
         var newFishPos = fish.position
         newFishPos.x = 0
-        newFishPos.y = -self.size.height
+        newFishPos.y = 5-self.size.height
         fish.runAction(SKAction.sequence([SKAction.moveTo(newFishPos, duration:0.1),
             SKAction.rotateByAngle(CGFloat(rotation), duration: 0.1)]))
         self.addChild(fish)
