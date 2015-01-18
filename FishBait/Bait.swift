@@ -50,9 +50,11 @@ class Bait : SKSpriteNode {
     func catch(fish: SKNode) {
         fish.removeFromParent()
         fish.removeAllActions()
+        fish.physicsBody?.categoryBitMask = 0
+        fish.physicsBody?.contactTestBitMask = 0
         var rotation = M_PI / 2.0
 //        let action = SKAction.rotateByAngle(rotation, CGFloat(0.1))
-        self.runAction(action)
+        //self.runAction(action)
         self.addChild(fish)
     }
 }

@@ -73,8 +73,12 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         if let fish = contact.bodyB.node {
             if(fish != self.bait!) {
                 self.bait?.catch(fish)
+               
+                
+
             }
         }
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
