@@ -23,6 +23,13 @@ class Bait : SKSpriteNode {
         super.init(texture: texture, color:color, size:texture.size())
 
         self.position.y = BaitUp
+
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size) // 1
+        self.physicsBody?.dynamic = false
+        self.physicsBody?.categoryBitMask = 1
+        self.physicsBody?.contactTestBitMask = 1
+        self.physicsBody?.collisionBitMask = 0
+
     }
 
     required init?(coder aDecoder: NSCoder) {
