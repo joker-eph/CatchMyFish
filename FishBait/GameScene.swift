@@ -8,21 +8,52 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene , SKPhysicsContactDelegate{
+    
+    var fishPosition:CGPoint!
+    var fishSize:CGSize!
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        //get fish location move horizontal
         
-        self.addChild(myLabel)
+        
+        let fish = childNodeWithName("fish") as SKSpriteNode
+        if(fishPosition == nil){
+            fishPosition = fish.position;
+        }
+        if(fishSize == nil){
+            fishSize = fish.size
+        }
+        fish.removeFromParent()
+        runAction(SKAction.repeatActionForever(
+            SKAction.sequence([
+                SKAction.runBlock(addFish),
+                SKAction.waitForDuration(3.0)
+                ])
+            ))
+        physicsWorld.contactDelegate = self
+    }
+    
+    func addFish(){
+        let fish = SKSpriteNode(imageNamed: "fish")
+        fish.position=fishPosition
+        fish.size=fishSize
+        fish.physicsBody = SKPhysicsBody(rectangleOfSize: fish.size) // 1
+        fish.physicsBody?.dynamic = true
+        fish.physicsBody?.categoryBitMask = 1
+        fish.physicsBody?.contactTestBitMask = 1
+        fish.physicsBody?.collisionBitMask = 0
+        addChild(fish)
+        let actionMoveStart = SKAction.moveTo(CGPoint(x: 0, y: fishPosition.y+fishSize.height), duration: NSTimeInterval(5.0))
+        let actionMoveDone = SKAction.removeFromParent()
+        
+        fish.runAction(SKAction.sequence([actionMoveStart , actionMoveDone]))
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
-        for touch: AnyObject in touches {
+       /* for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
             let sprite = SKSpriteNode(imageNamed:"Spaceship")
@@ -36,7 +67,7 @@ class GameScene: SKScene {
             sprite.runAction(SKAction.repeatActionForever(action))
             
             self.addChild(sprite)
-        }
+        }*/
     }
    
     override func update(currentTime: CFTimeInterval) {
