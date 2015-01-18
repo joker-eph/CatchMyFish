@@ -14,6 +14,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     var fishPosition:CGPoint!
     var fishSize:CGSize!
     var bait : Bait?
+    var score=0
 
     override func didMoveToView(view: SKView) {
         //get fish location move horizontal
@@ -47,16 +48,22 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         fish.position=fishPosition
         fish.size=fishSize
         fish.physicsBody = SKPhysicsBody(rectangleOfSize: fish.size) // 1
-        fish.physicsBody?.dynamic = true
+        fish.physicsBody?.dynamic = false
         fish.physicsBody?.categoryBitMask = 1
         fish.physicsBody?.contactTestBitMask = 1
         fish.physicsBody?.collisionBitMask = 0
         addChild(fish)
-        let actionMoveStart = SKAction.moveTo(CGPoint(x: 0, y: fishPosition.y+fishSize.height), duration: NSTimeInterval(5.0))
+        let actionMoveStart = SKAction.moveTo(CGPoint(x: 0, y: fishPosition.y), duration: NSTimeInterval(5.0))
         let actionMoveDone = SKAction.removeFromParent()
         
         fish.runAction(SKAction.sequence([actionMoveStart , actionMoveDone]))
 
+    }
+    
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        score=score+1
+        println("Score:" + String(score))
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
