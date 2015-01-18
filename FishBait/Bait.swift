@@ -10,7 +10,6 @@ import Foundation
 import SpriteKit
 
 class Bait : SKSpriteNode {
-    var isDown = false
     var BaitUp : CGFloat
     var BaitDown : CGFloat
 
@@ -19,7 +18,6 @@ class Bait : SKSpriteNode {
         self.BaitDown = BaitDown
         let texture = SKTexture(imageNamed: "LadyBug.png")
         let color = UIColor.clearColor()
-        println(texture.size())
         super.init(texture: texture, color:color, size:texture.size())
 
         self.position.y = BaitUp
@@ -37,14 +35,14 @@ class Bait : SKSpriteNode {
     }
 
     func toggle() {
-        var position = self.position
-        if(isDown) {
-            position.y = self.BaitUp
-        } else {
-            position.y = self.BaitDown
+        if(Int(self.position.y) == Int(BaitUp)) {
+            var positionDown = self.position
+            positionDown.y = BaitDown
+            var positionUp = self.position
+            positionUp.y = BaitUp
+            self.runAction(SKAction.sequence([SKAction.moveTo(positionDown, duration: 0.5),
+                SKAction.moveTo(positionUp, duration: 0.5)]
+                ))
         }
-        self.runAction(SKAction.moveTo(position, duration: 0.5))
-
-        isDown = !isDown
     }
 }
