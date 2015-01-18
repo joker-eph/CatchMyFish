@@ -17,6 +17,7 @@
 		A710D1E11A6B255C00BBB38B /* FishBaitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710D1E01A6B255C00BBB38B /* FishBaitTests.swift */; };
 		A710D1EE1A6B26FF00BBB38B /* LadyBug.png in Resources */ = {isa = PBXBuildFile; fileRef = A710D1ED1A6B26FF00BBB38B /* LadyBug.png */; };
 		A73D21BE1A6B2A84005C280E /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = A73D21BD1A6B2A84005C280E /* fish.png */; };
+		A73D21C01A6B2B0B005C280E /* Bait.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D21BF1A6B2B0B005C280E /* Bait.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A710D1E01A6B255C00BBB38B /* FishBaitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishBaitTests.swift; sourceTree = "<group>"; };
 		A710D1ED1A6B26FF00BBB38B /* LadyBug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LadyBug.png; path = Images/LadyBug.png; sourceTree = "<group>"; };
 		A73D21BD1A6B2A84005C280E /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fish.png; path = Images/fish.png; sourceTree = "<group>"; };
+		A73D21BF1A6B2B0B005C280E /* Bait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bait.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A710D1C61A6B255C00BBB38B /* AppDelegate.swift */,
+				A73D21BF1A6B2B0B005C280E /* Bait.swift */,
 				A710D1C81A6B255C00BBB38B /* GameScene.sks */,
 				A710D1CA1A6B255C00BBB38B /* GameScene.swift */,
 				A710D1CC1A6B255C00BBB38B /* GameViewController.swift */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A710D1CB1A6B255C00BBB38B /* GameScene.swift in Sources */,
+				A73D21C01A6B2B0B005C280E /* Bait.swift in Sources */,
 				A710D1CD1A6B255C00BBB38B /* GameViewController.swift in Sources */,
 				A710D1C71A6B255C00BBB38B /* AppDelegate.swift in Sources */,
 			);

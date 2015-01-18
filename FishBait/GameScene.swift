@@ -7,16 +7,16 @@
 //
 
 import SpriteKit
+//import Bait
 
 class GameScene: SKScene , SKPhysicsContactDelegate{
     
     var fishPosition:CGPoint!
     var fishSize:CGSize!
-    
+    var bait : Bait?
+
     override func didMoveToView(view: SKView) {
         //get fish location move horizontal
-        
-        
         let fish = childNodeWithName("fish") as SKSpriteNode
         if(fishPosition == nil){
             fishPosition = fish.position;
@@ -31,6 +31,16 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
                 SKAction.waitForDuration(3.0)
                 ])
             ))
+
+
+        /* Setup bait */
+        var BaitUp : CGFloat = CGRectGetMaxY(self.frame) * 0.9;
+        var BaitDown : CGFloat = fish.position.y;
+        self.bait = Bait(BaitUp: BaitUp, BaitDown: BaitDown);
+        self.bait?.position.x = CGRectGetMidX(self.frame)
+        self.addChild(self.bait!);
+
+
         physicsWorld.contactDelegate = self
     }
     
@@ -48,26 +58,12 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         let actionMoveDone = SKAction.removeFromParent()
         
         fish.runAction(SKAction.sequence([actionMoveStart , actionMoveDone]))
+
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
-       /* for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }*/
+        self.bait?.toggle()
     }
    
     override func update(currentTime: CFTimeInterval) {
