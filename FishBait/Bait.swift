@@ -52,9 +52,9 @@ class Bait : SKSpriteNode {
         fish.removeAllActions()
         fish.physicsBody?.categoryBitMask = 0
         fish.physicsBody?.contactTestBitMask = 0
-        var rotation = M_PI / 2.0
-//        let action = SKAction.rotateByAngle(rotation, CGFloat(0.1))
-        //self.runAction(action)
+        var rotation = -M_PI / 2.0
+        let action = SKAction.rotateByAngle(CGFloat(rotation), duration: 0.1)
+        fish.runAction(action)
         self.addChild(fish)
     }
 }
