@@ -41,7 +41,8 @@ class Bait : SKSpriteNode {
             positionDown.y = BaitDown
             var positionUp = self.position
             positionUp.y = BaitUp
-            self.runAction(SKAction.sequence([SKAction.moveTo(positionDown, duration: 0.5)]
+            self.runAction(SKAction.sequence([SKAction.moveTo(positionDown, duration: 0.5),
+                SKAction.moveTo(positionUp, duration: 0.5)]
                 ))
         }
     }
