@@ -47,7 +47,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         fish.position=fishPosition
         fish.size=fishSize
         fish.physicsBody = SKPhysicsBody(rectangleOfSize: fish.size) // 1
-        fish.physicsBody?.dynamic = true
+        fish.physicsBody?.dynamic = false
         fish.physicsBody?.categoryBitMask = 1
         fish.physicsBody?.contactTestBitMask = 1
         fish.physicsBody?.collisionBitMask = 0
