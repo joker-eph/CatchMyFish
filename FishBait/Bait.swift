@@ -25,10 +25,10 @@ class Bait : SKSpriteNode {
         self.position.y = BaitUp
 
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size) // 1
-        self.physicsBody?.dynamic = false
+        self.physicsBody?.dynamic = true
         self.physicsBody?.categoryBitMask = 1
         self.physicsBody?.contactTestBitMask = 1
-        self.physicsBody?.collisionBitMask = 0
+        //self.physicsBody?.collisionBitMask = 0
 
     }
 
