@@ -34,9 +34,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         bait.removeFromParent()
         var BaitUp : CGFloat = bait.position.y
         var BaitDown : CGFloat = fish.position.y;
-        self.bait = Bait(BaitUp: BaitUp, BaitDown: BaitDown);
+        self.bait = Bait(BaitUp: BaitUp, BaitDown: BaitDown, size: bait.size);
         self.bait?.position.x = CGRectGetMidX(self.frame)
-        self.bait?.size = bait.size
         self.addChild(self.bait!);
 
 
@@ -48,7 +47,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         fish.position=fishPosition
         fish.size=fishSize
         fish.physicsBody = SKPhysicsBody(rectangleOfSize: fish.size) // 1
-        fish.physicsBody?.dynamic = false
+        fish.physicsBody?.dynamic = true
+        fish.physicsBody?.affectedByGravity = false
         fish.physicsBody?.categoryBitMask = 1
         fish.physicsBody?.contactTestBitMask = 1
         fish.physicsBody?.collisionBitMask = 0

@@ -13,17 +13,18 @@ class Bait : SKSpriteNode {
     var BaitUp : CGFloat
     var BaitDown : CGFloat
 
-    init(BaitUp: CGFloat, BaitDown: CGFloat) {
+    init(BaitUp: CGFloat, BaitDown: CGFloat, size: CGSize) {
         self.BaitUp = BaitUp
         self.BaitDown = BaitDown
         let texture = SKTexture(imageNamed: "LadyBug.png")
         let color = UIColor.clearColor()
-        super.init(texture: texture, color:color, size:texture.size())
+        super.init(texture: texture, color:color, size:size)
 
         self.position.y = BaitUp
 
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size) // 1
-        self.physicsBody?.dynamic = false
+        self.physicsBody?.dynamic = true
+        self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = 1
         self.physicsBody?.contactTestBitMask = 1
         self.physicsBody?.collisionBitMask = 0
@@ -40,8 +41,7 @@ class Bait : SKSpriteNode {
             positionDown.y = BaitDown
             var positionUp = self.position
             positionUp.y = BaitUp
-            self.runAction(SKAction.sequence([SKAction.moveTo(positionDown, duration: 0.5),
-                SKAction.moveTo(positionUp, duration: 0.5)]
+            self.runAction(SKAction.sequence([SKAction.moveTo(positionDown, duration: 0.5)]
                 ))
         }
     }
