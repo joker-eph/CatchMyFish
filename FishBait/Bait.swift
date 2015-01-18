@@ -26,7 +26,7 @@ class Bait : SKSpriteNode {
         self.physicsBody?.dynamic = true
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = 1
-        self.physicsBody?.contactTestBitMask = 1
+        self.physicsBody?.contactTestBitMask = 2
         self.physicsBody?.collisionBitMask = 0
 
     }
@@ -45,5 +45,14 @@ class Bait : SKSpriteNode {
                 SKAction.moveTo(positionUp, duration: 0.5)]
                 ))
         }
+    }
+
+    func catch(fish: SKNode) {
+        fish.removeFromParent()
+        fish.removeAllActions()
+        var rotation = M_PI / 2.0
+//        let action = SKAction.rotateByAngle(rotation, CGFloat(0.1))
+        self.runAction(action)
+        self.addChild(fish)
     }
 }

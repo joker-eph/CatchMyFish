@@ -49,7 +49,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         fish.physicsBody = SKPhysicsBody(rectangleOfSize: fish.size) // 1
         fish.physicsBody?.dynamic = true
         fish.physicsBody?.affectedByGravity = false
-        fish.physicsBody?.categoryBitMask = 1
+        fish.physicsBody?.categoryBitMask = 2
         fish.physicsBody?.contactTestBitMask = 1
         fish.physicsBody?.collisionBitMask = 0
         addChild(fish)
@@ -64,6 +64,17 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     func didBeginContact(contact: SKPhysicsContact) {
         score=score+1
         println("Score:" + String(score))
+
+        if let fish = contact.bodyA.node {
+            if(fish != self.bait!) {
+                self.bait?.catch(fish)
+            }
+        }
+        if let fish = contact.bodyB.node {
+            if(fish != self.bait!) {
+                self.bait?.catch(fish)
+            }
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
