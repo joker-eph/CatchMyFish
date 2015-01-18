@@ -18,12 +18,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     override func didMoveToView(view: SKView) {
         //get fish location move horizontal
         let fish = childNodeWithName("fish") as SKSpriteNode
-        if(fishPosition == nil){
-            fishPosition = fish.position;
-        }
-        if(fishSize == nil){
-            fishSize = fish.size
-        }
+        fishPosition = fish.position;
+        fishSize = fish.size
         fish.removeFromParent()
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([
@@ -32,12 +28,14 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
                 ])
             ))
 
-
         /* Setup bait */
-        var BaitUp : CGFloat = CGRectGetMaxY(self.frame) * 0.9;
+        let bait = childNodeWithName("bait") as SKSpriteNode
+        bait.removeFromParent()
+        var BaitUp : CGFloat = bait.position.y
         var BaitDown : CGFloat = fish.position.y;
         self.bait = Bait(BaitUp: BaitUp, BaitDown: BaitDown);
         self.bait?.position.x = CGRectGetMidX(self.frame)
+        self.bait?.size = bait.size
         self.addChild(self.bait!);
 
 
