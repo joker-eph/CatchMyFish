@@ -37,13 +37,24 @@ class Bait : SKSpriteNode {
 
     func toggle() {
         if(Int(self.position.y) == Int(BaitUp)) {
+
             var positionDown = self.position
             positionDown.y = BaitDown
             var positionUp = self.position
             positionUp.y = BaitUp
             self.runAction(SKAction.sequence([SKAction.moveTo(positionDown, duration: 0.5),
-                SKAction.moveTo(positionUp, duration: 0.5)]
-                ))
+                SKAction.moveTo(positionUp, duration: 0.5),
+                SKAction.runBlock({ () in
+                    self.eatFish()
+                    }
+                )]))
+        }
+    }
+
+    func eatFish() {
+        for node in self.children as [SKNode] {
+            // FIXME: add a sound?
+            node.removeFromParent()
         }
     }
 
