@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B77EF161A6C6E1000E26C39 /* waterwaves.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B77EF151A6C6E1000E26C39 /* waterwaves.png */; };
 		A710D1C71A6B255C00BBB38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710D1C61A6B255C00BBB38B /* AppDelegate.swift */; };
 		A710D1C91A6B255C00BBB38B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A710D1C81A6B255C00BBB38B /* GameScene.sks */; };
 		A710D1CB1A6B255C00BBB38B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710D1CA1A6B255C00BBB38B /* GameScene.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B77EF151A6C6E1000E26C39 /* waterwaves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = waterwaves.png; path = Images/waterwaves.png; sourceTree = "<group>"; };
 		A710D1C11A6B255C00BBB38B /* FishBait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishBait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A710D1C51A6B255C00BBB38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A710D1C61A6B255C00BBB38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		A710D1EC1A6B26A300BBB38B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4B77EF151A6C6E1000E26C39 /* waterwaves.png */,
 				A73D21BD1A6B2A84005C280E /* fish.png */,
 				A710D1ED1A6B26FF00BBB38B /* LadyBug.png */,
 			);
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A710D1D51A6B255C00BBB38B /* LaunchScreen.xib in Resources */,
+				4B77EF161A6C6E1000E26C39 /* waterwaves.png in Resources */,
 				A710D1D21A6B255C00BBB38B /* Images.xcassets in Resources */,
 				A710D1C91A6B255C00BBB38B /* GameScene.sks in Resources */,
 				A710D1EE1A6B26FF00BBB38B /* LadyBug.png in Resources */,

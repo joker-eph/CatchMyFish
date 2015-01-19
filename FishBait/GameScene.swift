@@ -15,9 +15,21 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     var fishSize:CGSize!
     var bait : Bait?
     var score=0
+    var totalfishes=0
+    var bg:SKSpriteNode!
 
     override func didMoveToView(view: SKView) {
         //get fish location move horizontal
+        
+        bg = SKSpriteNode(imageNamed: "waterwaves")
+        bg.position = CGPointMake(self.position.x+self.size.width/2, self.position.y+self.size.height/2)
+        
+        self.addChild(bg)
+        
+        let moveAction = SKAction.moveByX(3.5, y: 0, duration: 0.02)
+        let moveForeverAction = SKAction.repeatActionForever(moveAction)
+        bg.runAction(moveForeverAction)
+        
         let fish = childNodeWithName("fish") as SKSpriteNode
         fishPosition = fish.position;
         fishSize = fish.size
@@ -53,6 +65,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         fish.physicsBody?.contactTestBitMask = 1
         fish.physicsBody?.collisionBitMask = 0
         addChild(fish)
+        totalfishes++
         let actionMoveStart = SKAction.moveTo(CGPoint(x: 0, y: fishPosition.y), duration: NSTimeInterval(5.0))
         let actionMoveDone = SKAction.removeFromParent()
         
@@ -64,7 +77,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     func didBeginContact(contact: SKPhysicsContact) {
         score=score+1
         println("Score:" + String(score))
-
+         println("Total fishes:" + String(totalfishes))
         if let fish = contact.bodyA.node {
             if(fish != self.bait!) {
                 self.bait?.catch(fish)
@@ -81,6 +94,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         
     }
     
+    func backgroundMovement() {
+        println("backg x")
+        println(bg.position.x)
+        if(bg.position.x > 640)
+        {
+            bg.position.x = 0
+        }
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         self.bait?.toggle()
@@ -88,5 +110,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        backgroundMovement()
     }
 }
